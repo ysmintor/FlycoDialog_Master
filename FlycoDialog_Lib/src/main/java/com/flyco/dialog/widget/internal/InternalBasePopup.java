@@ -1,7 +1,6 @@
 package com.flyco.dialog.widget.internal;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -43,6 +42,7 @@ public abstract class InternalBasePopup<T extends InternalBasePopup<T>> extends 
     @Override
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
+        mOnCreateView.setClickable(false);
         if (isLayoutObtain) {
             onLayoutObtain();
         }
